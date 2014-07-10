@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  script(src='/javascripts/twitter.trackback.js')
+  h1= title
+  p Welcome to #{title}
+  button(onClick=('start("lremedi")')) Start
+  button(onClick=('stop("lremedi")')) Stop
+  button(onClick=('refresh("lremedi")')) Refresh

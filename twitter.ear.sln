@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "twitter.trackback", "twitter.trackback\twitter.trackback.njsproj", "{BC03552E-D83B-40A2-9493-CB9A8AC285E3}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "twitter.ear.admin", "twitter.ear.admin\twitter.ear.admin.njsproj", "{81FD0F70-2DD9-4373-86BE-21776056D0E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC03552E-D83B-40A2-9493-CB9A8AC285E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC03552E-D83B-40A2-9493-CB9A8AC285E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC03552E-D83B-40A2-9493-CB9A8AC285E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC03552E-D83B-40A2-9493-CB9A8AC285E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81FD0F70-2DD9-4373-86BE-21776056D0E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81FD0F70-2DD9-4373-86BE-21776056D0E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81FD0F70-2DD9-4373-86BE-21776056D0E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81FD0F70-2DD9-4373-86BE-21776056D0E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
