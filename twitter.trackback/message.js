@@ -7,7 +7,7 @@
         ret.geo = tweet.geo;
         ret.id = tweet.id;
         ret.entities = tweet.entities;
-        ret.retweeted_status = this.wrapper(tweet.retweeted_status);
+        ret.retweeted_status = this.process(tweet.retweeted_status);
         return JSON.stringify(ret);
     }
 }

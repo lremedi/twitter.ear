@@ -1,18 +1,24 @@
 ﻿var fork = require("child_process").fork;
-var trackback = fork("../twitter.trackback/app.js");
-module.exports = function(){
+
+function trackback(user){
+    this.user = user;
+    this.process = fork("../twitter.trackback/app.js");
+
+    var that = this;
     var send = function(message){
-        trackback.send(message);
+        that.process.send(message);
     };
-    return {
-        start:function(user){
-            send({event:{type:"start"},data:{user:user}});
-        },
-        stop:function(user){
-            send({event:{type:"stop"},data:{user:user}});
-        },
-        refresh:function(user){
-            send({event:{type:"refresh"},data:{user:user}});
-        }
+
+    this.start = function(){
+        send({event:{type:"start"},data:{user:that.user}});
+    }
+
+    this.stop = function(){
+        send({event:{type:"stop"},data:{user:that.user}});
+    }
+    this.refresh = function(){
+        send({event:{type:"refresh"},data:{user:that.user}});
     }
 }
+
+module.exports = trackback;

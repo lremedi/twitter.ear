@@ -4,10 +4,10 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var trackbacks = [];
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var twitter_trackback = require('./api/twitter.trackback');
+var twitter_trackback = require('./api/twitter.trackback')(trackbacks);
 
 var app = express();
 

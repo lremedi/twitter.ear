@@ -16,7 +16,6 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
-    <Compile Include="example2.js" />
     <Compile Include="public\javascripts\twitter.trackback.js" />
     <Compile Include="api\twitter.trackback.js" />
     <Compile Include="services\twitter.trackback.js" />

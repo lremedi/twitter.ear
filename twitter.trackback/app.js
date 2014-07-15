@@ -63,7 +63,7 @@ var start = function(user){
     manual_stop = false;
     database.get_pattern(user)
     .then(stream);
-};
+}
 
 var stop = function(user){
     util.log("============================STOPING================================");
