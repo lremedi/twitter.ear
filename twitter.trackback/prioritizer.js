@@ -12,13 +12,13 @@
         }
         return ret;
     },
-    prioritize:function(t,c,defaultq){
+    prioritize: function (t, c, defaultq){
+        if (defaultq) return defaultq;
         var qs = this.classify(t,c);
         qs.sort(this.sorter);
         if(qs&&qs.length){
             return qs[0].key;
         }
-        return defaultq;
     },
     sorter:function(a,b){
         return a.val - b.val;

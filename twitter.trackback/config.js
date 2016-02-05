@@ -12,12 +12,12 @@
         password:'s4BSn9zheih9n5WEQHpPOD13te6JSQS9'
     },
     db:{
-        url:'mongodb://127.0.0.1:27017/',
+        url:'ds051524.mongolab.com:51524',
         database:'twitter_track',
         patterns:'patterns',
         configs:'configs',
-        user:'twitter_track_db',
-        password:'fx82ler$'
+        username:'remote',
+        password:'remote'
     }
 }
 

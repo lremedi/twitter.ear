@@ -3,7 +3,7 @@ var rabbitmq = require("amqplib");
 
 module.exports = function(config){
     //private
-    var amqp = {};
+    var amqp = {} , channel;
     var that = this;
     //constructor
     var init = function(cfg){
@@ -14,7 +14,7 @@ module.exports = function(config){
     return {
         enqueue:function(queue, message){
             that.amqp.then(function(conn){
-                var ok = conn.createChannel();
+                var ok = that.channel = that.channel || conn.createChannel();
                 ok = ok.then(function(ch) {
                     ch.assertQueue(queue);
                     ch.sendToQueue(queue, new Buffer(message));

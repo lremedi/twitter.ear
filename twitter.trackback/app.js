@@ -5,6 +5,7 @@ var twitter = require('./twitter.js')(config.twitter);
 var queue = require('./queue.js')(config.queue);
 var p = require('./prioritizer.js');
 var m = require('./message.js');
+var fs = require('fs');
 
 
 var manual_stop = false;
@@ -27,7 +28,7 @@ var onend = function(event_data) {
         start(message.data.user);
     }
     if(manual_stop){
-        util.log("============================MANUALLY STOPPED================================");
+        util.log("============================MANUALLY STOPPED=============================");
     }
 }
 
@@ -49,7 +50,6 @@ process.on('message', function(m){
             refresh(m.data.user);
             break;
     }
-
 });
 
 var load_keywords = function(pattern){
@@ -63,7 +63,7 @@ var start = function(user){
     manual_stop = false;
     database.get_pattern(user)
     .then(stream);
-}
+}('lremedi');
 
 var stop = function(user){
     util.log("============================STOPING================================");

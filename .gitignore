@@ -1,3 +1,5 @@
 twitter.ear.admin/node_modules/*
 twitter.trackback/node_modules/*
 twitter.ear.v12.suo
+twitter.trackback/obj/*
+twitter.trackback/bin/*

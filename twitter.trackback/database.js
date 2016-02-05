@@ -1,5 +1,5 @@
 ﻿var util = require("util");
-var monk = require("monk");
+var mongo = require('mongoskin');
 var q = require('q');
 
 module.exports = function(config){
@@ -9,17 +9,18 @@ module.exports = function(config){
     var configs = {};
     var that = this;
     //constructor
-    var init = function(cfg){
-        that.db = monk(cfg.url+cfg.database);
-        that.patterns = that.db.get(cfg.patterns);
-        that.configs = that.db.get(cfg.configs);
+    var init = function (cfg){
+        var url = util.format('mongodb://%s:%s@%s/%s', cfg.username, cfg.password, cfg.url, cfg.database);
+        that.db = mongo.db(url, { native_parser: true });
+        that.db.bind(cfg.patterns);
+        that.db.bind(cfg.configs);
     }(config);
 
     //public
     return {
         get_config:function(user){
             var deferred = q.defer();
-            that.configs.findOne({user:user},function(err,doc){
+            that.db.configs.findOne({user:user},function(err,doc){
                     if(err) deferred.reject(err);
                     deferred.resolve(doc);
                 });
@@ -27,7 +28,7 @@ module.exports = function(config){
         },
         get_pattern:function(user){
             var deferred = q.defer();
-            that.patterns.findOne({user:user},function(err,doc){
+            that.db.patterns.findOne({user:user},function(err,doc){
                     if(err) deferred.reject(err);
                     deferred.resolve(doc);
                 });
