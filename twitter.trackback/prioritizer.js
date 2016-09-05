@@ -1,4 +1,4 @@
-﻿module.exports={
+module.exports={
     classify:function(t, c){
         var ret = [];
         if (c){

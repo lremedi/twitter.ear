@@ -34,7 +34,7 @@ module.exports = function(config){
                 case 2:
                     that.ondata = ondata;
             }
-            
+
             var stream_handler = function(stream) {
                 that.curr_stream = stream;
                 stream.on('data', that.ondata);

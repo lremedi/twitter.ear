@@ -7,17 +7,19 @@
      stream_endpoint:'statuses/filter'
 	},
     queue:{
-        url:'amqp://%s:%s@tiger.cloudamqp.com/jtyqdtfy',
-        user:'jtyqdtfy',
-        password:'s4BSn9zheih9n5WEQHpPOD13te6JSQS9'
+        url:'amqp://%s:%s@127.0.0.1/tweets',
+        user:'hackweek',
+        password:'admin'
     },
     db:{
-        url:'ds051524.mongolab.com:51524',
-        database:'twitter_track',
+        url:'127.0.0.1',
+        database:'trackback',
         patterns:'patterns',
         configs:'configs',
-        username:'remote',
-        password:'remote'
+				tweets:'tweets',
+        username:'hackweek',
+        password:'admin',
+				port:'27017'
     }
 }
 

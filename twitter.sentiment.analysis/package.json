@@ -1,0 +1,15 @@
+{
+  "name": "twitter.sentiment.analysis",
+  "version": "1.0.0",
+  "description": "Sentiment Analysis using Facebook fastText",
+  "main": "app.js",
+  "dependencies": {
+    "q": "^1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lremedi",
+  "license": "ISC"
+}

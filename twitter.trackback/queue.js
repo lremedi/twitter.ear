@@ -12,7 +12,7 @@ module.exports = function(config){
 
     //public
     return {
-        enqueue:function(queue, message){
+        enqueue: function(queue, message){
             that.amqp.then(function(conn){
                 var ok = that.channel = that.channel || conn.createChannel();
                 ok = ok.then(function(ch) {
@@ -20,6 +20,20 @@ module.exports = function(config){
                     ch.sendToQueue(queue, new Buffer(message));
                 });
             }).then(null, console.warn);
+        },
+        consume: function (queue, process) {
+          that.amqp.then(function (conn) {
+              var ok = that.channel = that.channel || conn.createChannel();
+              ok = ok.then(function (ch) {
+                  ch.assertQueue(queue);
+                  ch.consume(queue, function (msg) {
+                      if (msg !== null) {
+                          process(msg.content.toString());
+                          ch.ack(msg);
+                      }
+                  });
+              });
+          }).then(null, console.warn);
         }
     }
 }

@@ -9,9 +9,10 @@
   },
   "dependencies": {
     "amqplib": "^0.2.0",
-    "mongodb": "^2.0.48",
-    "mongoskin": "^2.0.3",
+    "mongodb": "^2.2.9",
+    "mongoskin": "^2.1.0",
     "ntwitter": "^0.5.0",
-    "q": "^1.0.1"
+    "q": "^1.0.1",
+    "underscore": "^1.8.3"
   }
 }
