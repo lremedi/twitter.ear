@@ -1,6 +1,6 @@
 'use strict';
-const child_process = require("child_process").fork("twitter.trackback/app.js", [], { execArgv: ['--debug=5859'] });
-const consumer = require("child_process").fork("twitter.trackback/app.js", [], { execArgv: ['--debug=5860'] });
+const child_process = require("child_process").fork("twitter.trackback/app.js", []);
+const consumer = require("child_process").fork("twitter.trackback/app.js", []);
 
 child_process.on('message', function(response) {
     switch(response.event.type){
